@@ -1,0 +1,740 @@
+/* Reemplazando todo el CSS con estilos para simulador Kali Linux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu Mono", "Fira Code", monospace;
+  background: #000;
+  color: #00ff00;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Boot Screen Styles */
+.boot-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.boot-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.kali-logo {
+  font-size: 6rem;
+  color: #00ff41;
+  margin-bottom: 2rem;
+  animation: pulse 2s infinite;
+}
+
+.boot-text {
+  margin-bottom: 3rem;
+}
+
+.boot-line {
+  font-size: 1.2rem;
+  color: #00ff41;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: typewriter 0.8s ease forwards;
+}
+
+.boot-line:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.boot-line:nth-child(2) {
+  animation-delay: 1.5s;
+}
+.boot-line:nth-child(3) {
+  animation-delay: 2.5s;
+}
+.boot-line:nth-child(4) {
+  animation-delay: 3.5s;
+}
+.boot-line:nth-child(5) {
+  animation-delay: 4.5s;
+}
+
+.boot-progress {
+  width: 100%;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff41, #00cc33);
+  width: 0%;
+  animation: loading 5s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+/* Desktop Environment */
+.desktop {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.desktop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+/* Taskbar */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-top: 1px solid #00ff41;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 255, 65, 0.2);
+}
+
+.taskbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.kali-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #00ff41;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.kali-menu:hover {
+  background: rgba(0, 255, 65, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.taskbar-apps {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.app-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 255, 65, 0.1);
+  border: 1px solid #00ff41;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ff41;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-icon:hover {
+  background: rgba(0, 255, 65, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
+
+.taskbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.system-tray {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #00ff41;
+  font-size: 0.9rem;
+}
+
+.network-icon {
+  color: #00ff41;
+  cursor: pointer;
+}
+
+/* Desktop Icons */
+.desktop-icons {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.desktop-folder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  max-width: 120px;
+}
+
+.desktop-folder:hover {
+  background: rgba(0, 255, 65, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.desktop-folder i {
+  font-size: 3rem;
+  color: #00ff41;
+  margin-bottom: 0.5rem;
+}
+
+.desktop-folder span {
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* Window Styles */
+.window {
+  position: fixed;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 2px solid #00ff41;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 255, 65, 0.3);
+  z-index: 2000;
+  min-width: 600px;
+  min-height: 400px;
+  resize: both;
+  overflow: hidden;
+}
+
+.window-header {
+  height: 40px;
+  background: linear-gradient(135deg, #00ff41 0%, #00cc33 100%);
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  cursor: move;
+  font-weight: bold;
+}
+
+.window-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.window-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.window-btn {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.window-btn.minimize {
+  background: #ffcc00;
+  color: #000;
+}
+.window-btn.maximize {
+  background: #00ff00;
+  color: #000;
+}
+.window-btn.close {
+  background: #ff0000;
+  color: #fff;
+}
+
+.window-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Terminal Window */
+.terminal-window {
+  top: 10%;
+  left: 20%;
+  width: 800px;
+  height: 500px;
+}
+
+.terminal-content {
+  height: calc(100% - 40px);
+  background: #000;
+  color: #00ff41;
+  font-family: "Fira Code", monospace;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-output {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.terminal-line {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prompt {
+  color: #00ff41;
+  font-weight: bold;
+}
+
+.welcome-msg,
+.help-msg {
+  color: #ffffff;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #00ff41;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+.cursor {
+  color: #00ff41;
+  animation: blink 1s infinite;
+}
+
+/* File Manager */
+.file-manager {
+  top: 15%;
+  left: 25%;
+  width: 700px;
+  height: 500px;
+}
+
+.file-manager-content {
+  height: calc(100% - 40px);
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+.file-manager-toolbar {
+  height: 50px;
+  background: #2d2d2d;
+  border-bottom: 1px solid #00ff41;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: rgba(0, 255, 65, 0.1);
+  border: 1px solid #00ff41;
+  color: #00ff41;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 255, 65, 0.2);
+  transform: scale(1.05);
+}
+
+.path-bar {
+  flex: 1;
+  background: #000;
+  color: #00ff41;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+}
+
+.file-list {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.file-item:hover {
+  background: rgba(0, 255, 65, 0.1);
+  transform: translateX(10px);
+}
+
+.file-icon {
+  font-size: 1.5rem;
+  color: #00ff41;
+  width: 30px;
+}
+
+.file-name {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.file-type {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Content Viewer */
+.content-viewer {
+  top: 10%;
+  left: 30%;
+  width: 800px;
+  height: 600px;
+}
+
+.content-body {
+  height: calc(100% - 40px);
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 2rem;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+.content-body h1,
+.content-body h2,
+.content-body h3 {
+  color: #00ff41;
+  margin-bottom: 1rem;
+}
+
+.content-body p {
+  margin-bottom: 1rem;
+}
+
+.skill-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 255, 65, 0.05);
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  border-radius: 8px;
+}
+
+.skill-section h3 {
+  color: #00ff41;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tech-item {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+.tech-name {
+  color: #00ff41;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.tech-desc {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-item {
+  background: rgba(0, 255, 65, 0.05);
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.project-item:hover {
+  background: rgba(0, 255, 65, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 255, 65, 0.2);
+}
+
+.project-title {
+  color: #00ff41;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  color: #ccc;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  background: rgba(0, 255, 65, 0.2);
+  color: #00ff41;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+.project-link {
+  color: #00ff41;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.contact-method {
+  background: rgba(0, 255, 65, 0.05);
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+  background: rgba(0, 255, 65, 0.1);
+  transform: scale(1.05);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: #00ff41;
+  margin-bottom: 1rem;
+}
+
+.contact-label {
+  color: #00ff41;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.contact-value {
+  color: #ccc;
+}
+
+.contact-link {
+  color: #00ff41;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00ff41;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes typewriter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .desktop-icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .window {
+    min-width: 90%;
+    min-height: 70%;
+    top: 5% !important;
+    left: 5% !important;
+  }
+
+  .terminal-window,
+  .file-manager,
+  .content-viewer {
+    width: 90%;
+    height: 70%;
+  }
+
+  .taskbar {
+    padding: 0 0.5rem;
+  }
+
+  .taskbar-apps {
+    display: none;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc33;
+}

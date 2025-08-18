@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>René Caraballo García - Kali Linux Terminal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div id="bootScreen" class="boot-screen">
+        <div class="boot-content">
+            <div class="kali-logo">
+                <i class="fas fa-dragon"></i>
+            </div>
+            <div class="boot-text">
+                <div class="boot-line">Kali GNU/Linux Rolling</div>
+                <div class="boot-line">Loading kernel modules...</div>
+                <div class="boot-line">Starting network services...</div>
+                <div class="boot-line">Initializing desktop environment...</div>
+                <div class="boot-line">Welcome René Caraballo García</div>
+            </div>
+            <div class="boot-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Environment -->
+    <div id="desktop" class="desktop" style="display: none;">
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="taskbar-left">
+                <div class="kali-menu">
+                    <i class="fas fa-dragon"></i>
+                    <span>Kali</span>
+                </div>
+                <div class="taskbar-apps">
+                    <div class="app-icon" data-app="terminal">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <div class="app-icon" data-app="files">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="taskbar-right">
+                <div class="system-tray">
+                    <span class="datetime" id="datetime"></span>
+                    <div class="network-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-folder" data-folder="about">
+                <i class="fas fa-folder"></i>
+                <span>Acerca_de_mi</span>
+            </div>
+            <div class="desktop-folder" data-folder="projects">
+                <i class="fas fa-folder"></i>
+                <span>Proyectos</span>
+            </div>
+            <div class="desktop-folder" data-folder="contact">
+                <i class="fas fa-folder"></i>
+                <span>Contacto</span>
+            </div>
+        </div>
+
+        <!-- Terminal Window -->
+        <div id="terminalWindow" class="window terminal-window" style="display: none;">
+            <div class="window-header">
+                <div class="window-title">
+                    <i class="fas fa-terminal"></i>
+                    Terminal - rene@kali:~
+                </div>
+                <div class="window-controls">
+                    <button class="window-btn minimize"><!--<i class="fas fa-minus"></i>--></button>
+                    <button class="window-btn maximize"><!--<i class="fas fa-square"></i>--></button>
+                    <button class="window-btn close"><!--<i class="fas fa-times"></i>--></button>
+                </div>
+            </div>
+            <div class="terminal-content">
+                <div class="terminal-output" id="terminalOutput">
+                    <div class="terminal-line">
+                        <span class="prompt">rene@kali:~$</span> <span class="welcome-msg">Bienvenido al sistema de René Caraballo García</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">rene@kali:~$</span> <span class="help-msg">Escribe 'help' para ver comandos disponibles</span>
+                    </div>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="prompt">rene@kali:~$</span>
+                    <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false">
+                    <span class="cursor">_</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Manager Window -->
+        <div id="fileManager" class="window file-manager" style="display: none;">
+            <div class="window-header">
+                <div class="window-title">
+                    <i class="fas fa-folder"></i>
+                    <span id="currentPath">Explorador de Archivos - /home/rene</span>
+                </div>
+                <div class="window-controls">
+                    <button class="window-btn minimize"><!--<i class="fas fa-minus"></i>--></button>
+                    <button class="window-btn maximize"><!--<i class="fas fa-square"></i>--></button>
+                    <button class="window-btn close"><!--<i class="fas fa-times"></i>--></button>
+                </div>
+            </div>
+            <div class="file-manager-content">
+                <div class="file-manager-toolbar">
+                    <button class="nav-btn" id="backBtn"><i class="fas fa-arrow-left"></i></button>
+                    <button class="nav-btn" id="homeBtn"><i class="fas fa-home"></i></button>
+                    <div class="path-bar" id="pathBar">/home/rene</div>
+                </div>
+                <div class="file-list" id="fileList">
+                    <!-- Files will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Viewer Window -->
+        <div id="contentViewer" class="window content-viewer" style="display: none;">
+            <div class="window-header">
+                <div class="window-title">
+                    <i class="fas fa-file-alt"></i>
+                    <span id="contentTitle">Contenido</span>
+                </div>
+                <div class="window-controls">
+                    <button class="window-btn minimize"><!-- <i class="fas fa-minus"></i>--></button>
+                    <button class="window-btn maximize"><!-- <i class="fas fa-square"></i>--></button>
+                    <button class="window-btn close"><!-- <i class="fas fa-times"></i>--></button>
+                </div>
+            </div>
+            <div class="content-body" id="contentBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
