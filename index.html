@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>René Caraballo García - Full Stack Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="#home" class="nav-link active" data-es="INICIO" data-en="HOME">INICIO</a>
+                <a href="#about" class="nav-link" data-es="ACERCA" data-en="ABOUT">ACERCA</a>
+                <a href="#projects" class="nav-link" data-es="PROYECTOS" data-en="PROJECTS">PROYECTOS</a>
+                <a href="#contact" class="nav-link" data-es="CONTACTO" data-en="CONTACT">CONTACTO</a>
+                <a href="simulador/index.html" class="nav-link" data-es="Simulador" data-en="Simulator">SIMULADOR</a>
+            </div>
+
+            <div class="logo">
+                <div class="logo-icon">R</div>
+                <div class="logo-text">
+                    <span>RENÉ</span>
+                    <span>CARABALLO</span>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <div class="controls">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="lang-toggle" id="langToggle">
+                        <span class="lang-text">EN</span>
+                    </button>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/smd2025" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://wa.me/+5355791959" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span data-es="Bienvenido" data-en="Welcome">Welcome</span><br>
+                        <span data-es="Welcome" data-en="Bienvenido">Bienvenido</span>
+                    </h1>
+                    <button class="cta-button" data-es="VER MÁS" data-en="VIEW MORE">VER MÁS</button>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="circle-container">
+                        <div class="circle-bg"></div>
+                        <div class="circle-main"></div>
+                        <div class="code-symbols">
+                            <span class="symbol symbol-1">&lt;/&gt;</span>
+                            <span class="symbol symbol-2">{}</span>
+                            <span class="symbol symbol-3">( )</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-nav">
+                <button class="nav-arrow nav-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-arrow nav-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-es="ACERCA DE MÍ" data-en="ABOUT ME">ACERCA DE MÍ</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-es="Soy René Caraballo García, un desarrollador full stack apasionado por crear soluciones web innovadoras y funcionales. Con experiencia en tecnologías modernas tanto del frontend como del backend."
+                            data-en="I'm René Caraballo García, a full stack developer passionate about creating innovative and functional web solutions. With experience in modern frontend and backend technologies.">
+                            Soy René Caraballo García, un desarrollador full stack apasionado por crear soluciones web
+                            innovadoras y funcionales. Con experiencia en tecnologías modernas tanto del frontend como
+                            del backend.
+                        </p>
+
+                        <!-- Replaced basic skills section with animated flip cards -->
+                        <div class="skills-grid">
+                            <!-- Frontend Skills Card -->
+                            <div class="skill-card">
+                                <div class="skill-card-inner">
+                                    <div class="skill-card-front">
+                                        <div class="skill-icon">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <h3>Frontend</h3>
+                                        <p data-es="Interfaces modernas y responsivas"
+                                            data-en="Modern and responsive interfaces">
+                                            Interfaces modernas y responsivas
+                                        </p>
+                                    </div>
+                                    <div class="skill-card-back">
+
+                                        <div class="tech-details">
+                                            <div class="tech-item">
+                                                <span class="tech-name">TypeScript / CSS3</span>
+                                                <span class="tech-desc">Type Safety, Interfaces, Grid, Flexbox</span>
+                                            </div>
+                                            <div class="tech-item">
+                                                <span class="tech-name">Tailwind / Bootstrap</span>
+                                                <span class="tech-desc">Responsive & modern design</span>
+                                            </div>
+                                            <div class="tech-item">
+                                                <span class="tech-name">Canvas / PWA</span>
+                                                <span class="tech-desc">Interactive graphics, offline support</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Backend Skills Card -->
+                            <div class="skill-card">
+                                <div class="skill-card-inner">
+                                    <div class="skill-card-front">
+                                        <div class="skill-icon">
+                                            <i class="fas fa-server"></i>
+                                        </div>
+                                        <h3>Backend</h3>
+                                        <p data-es="APIs robustas y escalables" data-en="Robust and scalable APIs">
+                                            APIs robustas y escalables
+                                        </p>
+                                    </div>
+                                    <div class="skill-card-back">
+
+                                        <div class="tech-details">
+                                            <div class="tech-item">
+                                                <span class="tech-name">NestJS / PHP Core</span>
+                                                <span class="tech-desc"></span>
+                                            </div>
+                                            <div class="tech-item">
+                                                <span class="tech-name">DB - MySQL, PostgreSQL, Redis</span>
+                                                <span class="tech-desc"></span>
+                                            </div>
+                                            <div class="tech-item">
+                                                <span class="tech-name">Auth - JWT, Passport.js</span>
+                                                <span class="tech-desc"></span>
+                                            </div>
+                                            <div class="tech-item">
+                                                <span class="tech-name">GraphQL - API Rest - MicroServices</span>
+                                                <span class="tech-desc"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DevOps Skills Card -->
+                            <div class="skill-card">
+                                <div class="skill-card-inner">
+                                    <div class="skill-card-front">
+                                        <div class="skill-icon">
+                                            <i class="fas fa-cloud"></i>
+                                        </div>
+                                        <h3>DevOps</h3>
+                                        <p data-es="Despliegue y automatización" data-en="Deployment and automation">
+                                            Despliegue y automatización
+                                        </p>
+                                    </div>
+                                    <div class="skill-card-back">
+                                        <h4>DevOps & Tools</h4>
+                                        <div class="tech-details">
+                                            <div class="tech-item">
+                                                <span class="tech-name">Docker, Git, Kubernetes</span>
+                                                <span class="tech-desc"></span>
+                                            </div>
+                                            <div class="tech-item">
+                                                <span class="tech-name">AWS, Azure, GCP</span>
+                                                <span class="tech-desc"></span>
+                                            </div>
+                                            <div class="tech-item">
+                                                <span class="tech-name">CI/CD, Jenkins, GitHub Actions</span>
+                                                <span class="tech-desc"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="projects-header">
+                    <span class="projects-label" data-es="MIS PROYECTOS" data-en="MY PROJECTS">MIS PROYECTOS</span>
+                    <h2 class="projects-title" data-es="MIS ÚLTIMOS TRABAJOS" data-en="MY LATEST RELEASE">MIS ÚLTIMOS
+                        TRABAJOS</h2>
+                </div>
+
+
+
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/pos.png" alt="Restaurant System">
+                        </div>
+                        <div class="project-info">
+                            <h3 data-es="Sistema Restaurante" data-en="Restaurant System">SlytheerPOS - Sistema
+                                Restaurante
+                            </h3>
+                            <p data-es="SlytheerPOS es un sistema de punto de venta completo para restaurantes, diseñado para gestionar todas las operaciones de manera eficiente y segura. Incluye módulos de ventas, inventario con stock automático, gestión de almacenes, control de asistencia de empleados y reportes detallados. Compatible con pantallas KDS o impresoras, permite un flujo de trabajo híbrido entre digital y físico, optimizando la operatividad del negocio en tiempo real."
+                                data-en="SlytheerPOS is a complete point-of-sale system for restaurants, designed to manage all operations efficiently and securely. It includes sales modules, automatic inventory management, warehouse management, employee attendance control, and detailed reporting. Compatible with KDS displays or printers, it enables a hybrid digital-physical workflow, optimizing business operations in real time.">
+                                SlytheerPOS es un sistema de punto de venta completo para restaurantes, diseñado para
+                                gestionar todas las operaciones de manera eficiente y segura. Incluye módulos de ventas,
+                                inventario con stock automático, gestión de almacenes, control de asistencia de
+                                empleados y
+                                reportes detallados. Compatible con pantallas KDS o impresoras, permite un flujo de
+                                trabajo
+                                híbrido entre digital y físico, optimizando la operatividad del negocio en tiempo real.
+                            </p>
+                            <div class="project-tech">
+                                <span>PHP</span>
+                                <span>CORE JS</span>
+                                <span>JQuery</span>
+                                <span>Bootstrap</span>
+                                <span>MySQL</span>
+                            </div>
+                            <a href="https://github.com/smd2025/pos_system_v1.0_by_Rene_Caraballo_Garcia"
+                                target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/lamayorantilla.com.png" alt="Ads System">
+                        </div>
+                        <div class="project-info">
+                            <h3 data-es="Sistema de Anuncios
+                                Clasificados" data-en="Classified Ad System">Sistema de Anuncios
+                                Clasificados</h3>
+                            <p data-es="LaMayorAntilla.com es una plataforma de anuncios clasificados gratuita y segura dirigida a usuarios en Cuba. Permite la compra, venta y alquiler de productos y servicios en diversas categorías como vivienda, celulares, autos, empleos, moda, electrónica y más. Los anuncios son revisados por moderadores para garantizar su calidad y veracidad."
+                                data-en="LaMayorAntilla.com is a free and secure classifieds platform for users in Cuba. It allows the purchase, sale, and rental of products and services in various categories such as housing, cell phones, cars, jobs, fashion, electronics, and more. Ads are reviewed by moderators to ensure their quality and accuracy.">
+                                LaMayorAntilla.com es una plataforma de anuncios clasificados gratuita y segura dirigida
+                                a usuarios en Cuba. Permite la compra, venta y alquiler de productos y servicios en
+                                diversas categorías como vivienda, celulares, autos, empleos, moda, electrónica y más.
+                                Los anuncios son revisados por moderadores para garantizar su calidad y veracidad.
+                            </p>
+                            <div class="project-tech">
+                                <span>PHP</span>
+                                <span>OpenGraph</span>
+                                <span>Tailwind</span>
+                                <span>CORE JS</span>
+                                <span>MySQL</span>
+                                <span>PWA</span>
+
+                            </div>
+
+                            <a href="https://lamayorantilla.com/" target="_blank" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-link" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
+                                    <path
+                                        d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/bf483fcd-bc37-4ce6-a36c-cf27b9ece928-cover.png" alt="Crypto Dashboard">
+                        </div>
+                        <div class="project-info">
+                            <h3 data-es="Dashboard Crypto" data-en="Crypto Dashboard">Dashboard Crypto</h3>
+                            <p data-es="Dashboard de criptomonedas completo en HTML, CSS y JavaScript puro. El dashboard incluye datos en tiempo real de la API de CoinGecko, gráficos interactivos dibujados con Canvas, y actualizaciones automáticas cada 30 segundos."
+                                data-en="Complete cryptocurrency dashboard in pure HTML, CSS, and JavaScript. The dashboard includes real-time data from the CoinGecko API, interactive charts drawn with Canvas, and automatic updates every 30 seconds.">
+                                Dashboard de criptomonedas completo en HTML, CSS y JavaScript puro. El dashboard incluye
+                                datos en tiempo real de la API de CoinGecko, gráficos interactivos dibujados con Canvas,
+                                y actualizaciones automáticas cada 30 segundos.
+                            </p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JS</span>
+                                <span>CoinGecko</span>
+                            </div>
+                            <a href="https://github.com/smd2025/Simple_Crypto" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title" data-es="CONTACTO" data-en="CONTACT">CONTACTO</h2>
+                <div class="contact-content">
+                    <!-- Redesigned contact section with modern layout -->
+                    <div class="contact-wrapper">
+                        <div class="contact-info-section">
+                            <div class="contact-header">
+                                <h3 data-es="¡Trabajemos juntos!" data-en="Let's work together!">¡Trabajemos juntos!
+                                </h3>
+                                <p data-es="¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y ayudarte a hacerlas realidad."
+                                    data-en="Do you have a project in mind? I'd love to hear your ideas and help you make them a reality.">
+                                    ¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y ayudarte a hacerlas
+                                    realidad.
+                                </p>
+                            </div>
+
+                            <div class="contact-methods">
+                                <a href="mailto:supermentedigital.srl@gmail.com" class="contact-method">
+                                    <div class="method-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h4>Email</h4>
+                                        <span>Gmail</span>
+                                    </div>
+                                </a>
+
+                                <a href="https://wa.me/+5355791959" target="_blank" class="contact-method">
+                                    <div class="method-icon whatsapp">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h4>WhatsApp</h4>
+                                        <span>Cuba - America/Havana</span>
+                                    </div>
+                                </a>
+
+                                <a href="https://github.com/smd2025" target="_blank" class="contact-method">
+                                    <div class="method-icon github">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h4>GitHub</h4>
+                                        <span>@smd2025</span>
+                                    </div>
+                                </a>
+
+
+                            </div>
+                        </div>
+
+                        <div class="contact-form-section">
+                            <!-- Enhanced contact form -->
+                            <form class="modern-contact-form" id="contactForm">
+                                <div class="form-header">
+                                    <h4 data-es="Envíame un mensaje" data-en="Send me a message">Envíame un mensaje</h4>
+                                    <p data-es="Te responderé lo antes posible"
+                                        data-en="I'll get back to you as soon as possible">Te responderé lo antes
+                                        posible</p>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <input type="text" id="name" name="name" required>
+                                        <label for="name" data-es="Tu nombre" data-en="Your name">Tu nombre</label>
+                                        <div class="field-border"></div>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="email" id="email" name="email" required>
+                                        <label for="email" data-es="Tu email" data-en="Your email">Tu email</label>
+                                        <div class="field-border"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <input type="text" id="subject" name="subject" required>
+                                    <label for="subject" data-es="Asunto" data-en="Subject">Asunto</label>
+                                    <div class="field-border"></div>
+                                </div>
+
+                                <div class="form-field">
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                    <label for="message" data-es="Tu mensaje" data-en="Your message">Tu mensaje</label>
+                                    <div class="field-border"></div>
+                                </div>
+
+                                <button type="submit" class="modern-submit-btn" id="submitBtn">
+                                    <span class="btn-content">
+                                        <span class="btn-text" data-es="Enviar Mensaje" data-en="Send Message">Enviar
+                                            Mensaje</span>
+                                        <i class="fas fa-paper-plane"></i>
+                                    </span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                        <span data-es="Enviando..." data-en="Sending...">Enviando...</span>
+                                    </span>
+                                </button>
+                            </form>
+
+                            <!-- Enhanced success message -->
+                            <div class="modern-success-message" id="successMessage" style="display: none;">
+                                <div class="success-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="success-content">
+                                    <h4 data-es="¡Mensaje enviado exitosamente!" data-en="Message sent successfully!">
+                                        ¡Mensaje enviado exitosamente!</h4>
+                                    <p data-es="Gracias por contactarme. Te responderé pronto."
+                                        data-en="Thank you for contacting me. I'll get back to you soon.">Gracias por
+                                        contactarme. Te responderé pronto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
